@@ -1,0 +1,71 @@
+<%- include('partials/header.ejs'); %>
+
+<section class="form-section new-book-form">
+  <h2>Add a New Book</h2>
+  <form action="/add" method="POST" class="book-form">
+
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input type="text" id="isbn" name="isbn" placeholder="9781234567890" required>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Book Title" required>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input type="text" id="author" name="author" placeholder="Author Name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="date_read">Date Finished</label>
+    <input type="date" id="date_read" name="date_read">
+  </div>
+
+  <div class="form-group">
+    <label for="summary">Summary</label>
+    <textarea id="summary" name="summary" placeholder="Short summary of the book" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes" placeholder="Your personal notes" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+  <label for="rating">Rating</label>
+  <div class="star-rating">
+    <input type="radio" id="star5" name="rating" value="1" />
+    <label for="star5" title="5 stars">★</label>
+
+    <input type="radio" id="star4" name="rating" value="2" />
+    <label for="star4" title="4 stars">★</label>
+
+    <input type="radio" id="star3" name="rating" value="3" />
+    <label for="star3" title="3 stars">★</label>
+
+    <input type="radio" id="star2" name="rating" value="4" />
+    <label for="star2" title="2 stars">★</label>
+
+    <input type="radio" id="star1" name="rating" value="5" />
+    <label for="star1" title="1 star">★</label>
+  </div>
+</div>
+
+
+  <div class="form-group">
+    <label for="tags">Tags</label>
+    <input type="text" id="tags" name="tags" placeholder="e.g. productivity, fiction">
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="submit-button">➕ Add Book</button>
+  </div>
+
+</form>
+
+</section>
+
+<%- include('partials/footer.ejs'); %>

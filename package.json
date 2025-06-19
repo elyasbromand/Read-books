@@ -1,0 +1,19 @@
+{
+  "name": "8.7-book-capstone",
+  "version": "1.0.0",
+  "description": "Book Capstone",
+  "license": "ISC",
+  "author": "Elyas Bromand",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "pg": "^8.16.1"
+  }
+}

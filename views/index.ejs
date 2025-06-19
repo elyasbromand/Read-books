@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs'); %>
+
+<div class="book-list-container">
+  <% for(let book of books){ %>
+  <form class="book-card" action="/edit" method="POST">
+    <input type="hidden" name="book_id" value="<%= book.id %>" />
+
+    <div class="book-card-content">
+        
+        <div class="book-image">
+        <img
+          src="<%= book.image %>"
+          alt="Cover of <%= book.title %>"
+          class="book-cover"
+        />
+      </div>
+      
+
+      <div class="book-info">
+        <h2 class="book-title"><%= book.title %></h2>
+        <p class="book-author">By: <%= book.author %></p>
+        <p class="book-rating">Rating: <%= book.rating %> / 5</p>
+        <p class="book-notes"><strong>Notes:</strong> <%= book.notes %></p>
+        <p class="book-date">
+          Read on: <%= book.date_read ? book.date_read.toDateString() : "Not set" %>
+        </p>
+      </div>
+
+      <div class="book-actions">
+        <button type="submit" class="edit-button">Edit</button>
+      </div>
+    </div>
+  </form>
+  <% } %>
+</div>
+
+<%- include('partials/footer.ejs'); %>

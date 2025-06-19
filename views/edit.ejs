@@ -1,0 +1,53 @@
+<%- include('partials/header.ejs'); %>
+
+
+<form action="/edit_record" method="POST" class="book-form">
+  <!-- Display only fields (not editable) -->
+  <div class="form-group">
+    <label>Title</label>
+    <p class="form-control-static"><%= book.title %></p>
+  </div>
+  
+  <div class="form-group">
+    <label>Author</label>
+    <p class="form-control-static"><%= book.author %></p>
+  </div>
+  
+  <!-- Editable fields -->
+  <div class="form-group">
+    <label for="summary">Summary</label>
+    <textarea class="form-control" id="summary" name="summary" rows="3"><%= book.summary %></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="notes">Notes</label>
+    <textarea class="form-control" id="notes" name="notes" rows="3"><%= book.notes %></textarea>
+  </div>
+  
+  <!-- Star Rating -->
+  <div class="form-group">
+    <label>Rating</label>
+    <div class="star-rating">
+      <% for(let i = 1; i <= 5; i++) { %>
+        <input type="radio" id="star<%= i %>" name="rating" value="<%= i %>" 
+          <%= book.rating === i ? 'checked' : '' %> />
+        <label for="star<%= i %>">★</label>
+      <% } %>
+    </div>
+  </div>
+  
+  <!-- Tags -->
+  <div class="form-group">
+    <label for="tags">Tags</label>
+    <input type="text" class="form-control" id="tags" name="tags" 
+      value="<%= book.tags %>" />
+  </div>
+  <input type="hidden" name="book_id", value="<%= book.id %>">
+  <button type="submit" class="btn btn-primary">Update Book</button>
+</form>
+
+
+
+
+
+<%- include('partials/footer.ejs'); %>
