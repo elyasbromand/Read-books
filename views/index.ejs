@@ -1,4 +1,14 @@
 <%- include('partials/header.ejs'); %>
+<!-- Sorting Form -->
+<form action="/" method="GET" class="sort-form">
+  <label for="sort-by">Sort by:</label>
+  <select name="sort" id="sort-by" onchange="this.form.submit()">
+    <option value="">-- Select --</option>
+    <option value="date_read" <%= sort === 'date_read' ? 'selected' : '' %>>Date Read</option>
+    <option value="rating" <%= sort === 'rating' ? 'selected' : '' %>>Rating</option>
+    <option value="title" <%= sort === 'title' ? 'selected' : '' %>>Title</option>
+  </select>
+</form>
 
 <div class="book-list-container">
   <% for(let book of books){ %>

@@ -236,3 +236,43 @@ footer {
 .star-rating label:hover ~ label {
   color: #f5b301;
 }
+
+.sort-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  max-width: 400px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sort-form label {
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+}
+
+.sort-form select {
+  padding: 8px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.sort-form select:hover {
+  border-color: #666;
+}
+
+.sort-form select:focus {
+  outline: none;
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 2px rgba(90, 103, 216, 0.2);
+}
